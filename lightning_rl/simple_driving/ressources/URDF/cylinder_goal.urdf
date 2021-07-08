@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="cylinder goal">
+    <!-- Colors -->
+    <material name="lawngreen">
+        <color rgba="0.486 0.988 0 0.75"/>
+    </material>
+
+    <!-- Goal -->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.75" length="0.25"/>
+                <origin rpy="0 0 0" xyz="0 0 0.5"/>
+            </geometry>
+            <material name="lawngreen"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder radius="0.75" length="0.25"/>
+                <origin rpy="0 0 0" xyz="0 0 0.5"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+
+    </link>
+</robot>

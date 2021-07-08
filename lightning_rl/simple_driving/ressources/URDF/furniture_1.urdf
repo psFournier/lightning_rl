@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="Furniture 1">
+    <!-- Colors -->
+    <material name="red">
+        <color rgba="0.196 0.804 0.196 1"/>
+    </material>
+
+    <!-- Furniture -->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="1.5 0.5 0.6" />
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+
+        <collision>
+             <geometry>
+                <box size="1.5 0.5 0.6" />
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+</robot>

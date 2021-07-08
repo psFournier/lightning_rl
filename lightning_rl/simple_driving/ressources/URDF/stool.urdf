@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<robot name="stool">
+    <!-- Colors -->
+    <material name="red">
+        <color rgba="0.655 0.358 0.149 1"/>
+    </material>
+
+    <!-- stool -->
+    <link name="cylinder_1">
+        <visual>
+            <geometry>
+                <cylinder length="0.4" radius="0.02"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder length="0.4" radius="0.02"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <link name="cylinder_2">
+        <visual>
+            <geometry>
+                <cylinder length="0.4" radius="0.02"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder length="0.4" radius="0.02"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <link name="cylinder_3">
+        <visual>
+            <geometry>
+                <cylinder length="0.4" radius="0.02"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder length="0.4" radius="0.02"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+
+    <link name="cylinder_4">
+        <visual>
+            <geometry>
+                <cylinder length="0.4" radius="0.02"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder length="0.4" radius="0.02"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <link name="seat">
+        <visual>
+            <geometry>
+                <box size="0.2 0.2 0.04" />
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+             <geometry>
+                <box size="0.2 0.2 0.04" />
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <joint name="cylinder_1_to_seat" type="fixed">
+      <parent link="seat"/>
+      <child link="cylinder_1"/>
+      <origin xyz="0.06 -0.06 -0.2"/>
+    </joint>
+
+    <joint name="cylinder_2_to_seat" type="fixed">
+      <parent link="seat"/>
+      <child link="cylinder_2"/>
+      <origin xyz="0.06 0.06 -0.2"/>
+    </joint>
+
+    <joint name="cylinder_3_to_seat" type="fixed">
+      <parent link="seat"/>
+      <child link="cylinder_3"/>
+      <origin xyz="-0.06 0.06 -0.2"/>
+    </joint>
+
+    <joint name="cylinder_4_to_seat" type="fixed">
+      <parent link="seat"/>
+      <child link="cylinder_4"/>
+      <origin xyz="-0.06 -0.06 -0.2"/>
+    </joint>
+
+</robot>

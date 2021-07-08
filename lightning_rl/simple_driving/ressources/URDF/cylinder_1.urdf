@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot name="plant">
+    <!-- Colors -->
+    <material name="brique">
+        <color rgba="0.517 0.180 0.106 1"/>
+    </material>
+    <material name="sepia">
+        <color rgba="0.663 0.549 0.471 1"/>
+    </material>
+    <material name="vert">
+        <color rgba="0.133 0.470 0.059 1"/>
+    </material>
+
+    <!-- plant -->
+    <link name="cylinder_1">
+        <visual>
+            <geometry>
+                <cylinder radius="0.3" length="0.4"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="sepia"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder radius="0.3" length="0.4"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <link name="cylinder_2">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.8"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="brique"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder radius="0.1" length="0.8"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <link name="sphere_1">
+        <visual>
+            <geometry>
+                <sphere radius="0.3"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+            <material name="vert"/>
+        </visual>
+        <collision>
+             <geometry>
+                <sphere radius="0.3" />
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <joint name="back_to_seat" type="fixed">
+      <parent link="cylinder_1"/>
+      <child link="cylinder_2"/>
+      <origin xyz="0 0 0.6"/>
+    </joint>
+
+    <joint name="cylinder_1_to_seat" type="fixed">
+      <parent link="cylinder_2"/>
+      <child link="sphere_1"/>
+      <origin xyz="0 0 0.45"/>
+    </joint>
+</robot>
